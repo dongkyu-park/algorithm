@@ -11,13 +11,11 @@ public class Solution {
         // d 배열을 오름차순으로 정렬
         for (int i=0; i < d.length; i++) {
 
-            for (int k=0; k < d.length-i; k++) {
+            for (int k=0; k < d.length-(i+1); k++) {
                 if(d[k] > d[k+1]) {
                     temp = d[k+1];
                     d[k+1] = d[k];
                     d[k] = temp;
-                } else {
-                    break;
                 }
             }
 
