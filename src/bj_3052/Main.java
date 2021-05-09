@@ -1,19 +1,25 @@
 package bj_3052;
 
-import java.util.HashSet;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arr = {sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(),
-                sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt()};
-        HashSet<Integer> hashSet= new HashSet<>();
+        int n = sc.nextInt();
 
-        for (int temp : arr) {
-            hashSet.add(temp % 42);
+        double[] arr = new double[n];
+        double sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextDouble();
+            sum += arr[i];
         }
 
-        System.out.println(hashSet.size());
+        Arrays.sort(arr);
+        double m = arr[n-1];
+
+        double average = ((sum / m * 100) / n);
+        System.out.println(average);
     }
 }
