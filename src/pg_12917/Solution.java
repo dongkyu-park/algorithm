@@ -7,11 +7,7 @@ class Solution {
     public String solution(String s) {
         String answer = "";
 
-        String[] arr = new String[s.length()];
-
-        for (int i = 0; i < s.length(); i++) {
-            arr[i] = String.valueOf(s.charAt(i));
-        }
+        String[] arr = s.split("");
 
         Arrays.sort(arr, Collections.reverseOrder());
 
