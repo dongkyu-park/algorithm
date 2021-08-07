@@ -1,22 +1,16 @@
 package pg_12973;
 
+import java.util.Stack;
+
 class Solution {
     public int solution(String s) {
-        int answer = 1;
-        StringBuilder myString = new StringBuilder(s);
-
-        for (int i = 0; i < myString.length() - 1; i++) {
-            if (myString.charAt(i) == myString.charAt(i + 1)) {
-                myString.deleteCharAt(i + 1);
-                myString.deleteCharAt(i);
-                i = -1;
-            }
+        Stack<Character> stack = new Stack<Character>();
+        for (int i = 0; i < s.length(); i++) {
+            if (!stack.isEmpty() && stack.peek() == s.charAt(i))
+                stack.pop();
+            else
+                stack.push(s.charAt(i));
         }
-
-        if (myString.length() != 0) {
-            return 0;
-        }
-
-        return answer;
+        return stack.isEmpty() ? 1 : 0;
     }
 }
