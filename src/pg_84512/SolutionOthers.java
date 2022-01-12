@@ -19,6 +19,7 @@ public class SolutionOthers {
         for (int i = 0; i < arr.length; i++) {
             String ss = s + arr[i];
             cnt++;
+            System.out.println(ss);
             if (ss.equals(word)) {
                 ans = cnt;
                 return;
